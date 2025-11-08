@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Your Language Documentation</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 20px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  header {
+    background-color: #005f73;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+  }
+  h1, h2, h3 {
+    color: #0a9396;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  th, td {
+    border: 1px solid #94a1b2;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #94a1b2;
+    color: white;
+  }
+  pre {
+    background-color: #001219;
+    color: #e0e0e0;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-bottom: 25px;
+  }
+  code {
+    font-family: Consolas, Monaco, 'Courier New', monospace;
+  }
+  .note {
+    background-color: #94d2bd;
+    border-left: 6px solid #0a9396;
+    padding: 10px;
+    margin-bottom: 25px;
+  }
+  footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin: 40px 0 20px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Your Language Programming Language Documentation</h1>
+  <p>Simple and Typed Scripting Language</p>
+</header>
+
+<main>
+  <section>
+    <h2>1. Overview</h2>
+    <p>This language is designed to provide a simple and clear way to declare variables with explicit data types, interact with the console, and handle errors gracefully. It supports multiple data types, variable operations, and console input/output with color support.</p>
+  </section>
+
+  <section>
+    <h2>2. Data Types</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default Value</th>
+          <th>Min Value</th>
+          <th>Max Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Byte</td><td>Unsigned 8-bit integer</td><td>0</td><td>0</td><td>255</td></tr>
+        <tr><td>SByte</td><td>Signed 8-bit integer</td><td>0</td><td>-128</td><td>127</td></tr>
+        <tr><td>Short</td><td>Signed 16-bit integer</td><td>0</td><td>-32768</td><td>32767</td></tr>
+        <tr><td>UShort</td><td>Unsigned 16-bit integer</td><td>0</td><td>0</td><td>65535</td></tr>
+        <tr><td>Integer</td><td>Signed 32-bit integer</td><td>0</td><td>-2147483648</td><td>2147483647</td></tr>
+        <tr><td>UInteger</td><td>Unsigned 32-bit integer</td><td>0</td><td>0</td><td>4294967295</td></tr>
+        <tr><td>Long</td><td>Signed 64-bit integer</td><td>0</td><td>-9223372036854775808</td><td>9223372036854775807</td></tr>
+        <tr><td>ULong</td><td>Unsigned 64-bit integer</td><td>0</td><td>0</td><td>18446744073709551615</td></tr>
+        <tr><td>Single</td><td>32-bit floating point</td><td>0.0</td><td>-3.4028235e38</td><td>3.4028235e38</td></tr>
+        <tr><td>Double</td><td>64-bit floating point</td><td>0.0</td><td>-1.7976931348623157e308</td><td>1.7976931348623157e308</td></tr>
+        <tr><td>Decimal</td><td>High precision float</td><td>0.0</td><td>-7.9228162514264337e28</td><td>7.9228162514264337e28</td></tr>
+        <tr><td>Char</td><td>Single character</td><td>'\0'</td><td>N/A</td><td>N/A</td></tr>
+        <tr><td>String</td><td>Text string</td><td>"" (empty)</td><td>Minimum 2 characters</td><td>Unlimited</td></tr>
+        <tr><td>Boolean</td><td>True or False</td><td>False</td><td>False</td><td>True</td></tr>
+        <tr><td>Auto</td><td>Automatic typing</td><td>None</td><td>Depends on value</td><td>Depends on value</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>3. Declaring Variables</h2>
+    <p>Variables are declared using the <code>Var</code> keyword followed by the variable name, type, and optionally, the initial value.</p>
+    <pre><code>Var &lt;VariableName&gt; As &lt;DataType&gt; = &lt;Value&gt;
+
+Or without an initial value (defaults apply):
+
+Var &lt;VariableName&gt; As &lt;DataType&gt;
+</code></pre>
+    <p><strong>Examples:</strong></p>
+    <pre><code>Var score As Integer = 10
+Var username As String
+</code></pre>
+  </section>
+
+  <section>
+    <h2>4. Updating Variables</h2>
+    <p>Assign a new value to an existing variable using the assignment operator <code>=</code>. The value will be converted to the variable's declared data type.</p>
+    <pre><code>&lt;VariableName&gt; = &lt;NewValue&gt;
+</code></pre>
+  </section>
+
+  <section>
+    <h2>5. Renaming Variables</h2>
+    <p>To rename a variable:</p>
+    <pre><code>VarcName &lt;OldName&gt; To &lt;NewName&gt;
+</code></pre>
+  </section>
+
+  <section>
+    <h2>6. Deleting Variables</h2>
+    <p>Remove a variable from the system:</p>
+    <pre><code>DelVar &lt;VariableName&gt;
+</code></pre>
+  </section>
+
+  <section>
+    <h2>7. Console Input / Output Functions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Function</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>Console.Readln()</code></td><td>Read input from the user</td></tr>
+        <tr><td><code>Console.Writeln(text)</code></td><td>Print text followed by a newline</td></tr>
+        <tr><td><code>Console.CLWriteln(text, color)</code></td><td>Print colored text followed by a newline</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>8. Comments</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Prefix</th>
+          <th>Meaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>@!</code></td><td>Important comment or alert</td></tr>
+        <tr><td><code>@/</code></td><td>Normal comment</td></tr>
+        <tr><td><code>@#</code></td><td>Deprecated or removed code</td></tr>
+        <tr><td><code>@?</code></td><td>Question for the team</td></tr>
+        <tr><td><code>@-</code></td><td>Answer to a previous question</td></tr>
+        <tr><td><code>@&gt;</code></td><td>Planned future addition</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>9. Error Handling</h2>
+    <p>The system outputs clear error messages with color coding to indicate issues such as:</p>
+    <ul>
+      <li>Unknown variable</li>
+      <li>Invalid data type</li>
+      <li>Syntax error</li>
+      <li>Conversion failure</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>10. Example Usage</h2>
+    <pre><code>Var age As Integer = 25
+Var name As String = "Omar"
+Var isStudent As Boolean = true
+
+age = 30
+name = Console.Readln()
+
+VarcName age To userAge
+
+DelVar isStudent
+
+Console.Writeln("Welcome, " + name)
+Console.CLWriteln("This is colored text", "green")
+</code></pre>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Your Language Documentation
+</footer>
+
+</body>
+</html>
